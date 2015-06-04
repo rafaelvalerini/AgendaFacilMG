@@ -1,0 +1,207 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, figure { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; position:relative; } /* remember to define focus styles! */ :focus { outline: 0; } body { line-height: 1; color: black; background: white; } ol, ul { list-style: none; } /* tables still need 'cellspacing="0"' in the markup */ table { border-collapse: separate; border-spacing: 0; } caption, th, td { text-align: left; font-weight: normal; } blockquote:before, blockquote:after, q:before, q:after { content: ""; } blockquote, q { quotes: "" ""; } header, footer, section, article, nav, div, aside, ul, li, ol, form, address, figure{ position: relative; } textarea { overflow: auto; vertical-align: top; resize: none; } .clearfix:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; } .ir { *line-height: 0; } .ir br { display: none; } address { font-style: normal; } a { display: block; text-decoration: none; } input[type="text"], input[type="password"], textarea { padding: 0; margin: 0; border: 0; } input[type="submit"], button { cursor: pointer; border: 0; margin: 0; padding: 0; } button { overflow: visible; } img { display: block; } hr { border: none; margin: 0; }
+
+html, body{
+	height:100%;	
+}
+
+/* index.html */
+#tela{
+	position:relative;
+	width:100%;
+	height:100%;
+	background-image:url(images/background.jpg);
+	background-position:center center;
+	background-repeat:no-repeat;
+	display:block;
+}
+	#tela #conteudo{
+		position:absolute;
+		top:50%;
+		margin-top:-70px;
+		margin-left: 20%;
+	}
+	#tela #conteudo #conteudo-topo{
+			
+	}
+					#conteudo-topo h1{
+						float:left;
+						/*margin-right: -45px;*/
+						margin-top: 8px;
+						z-index:1;
+					}
+					#conteudo-topo #em-breve{
+						float:left;	
+						width:328px;
+						z-index:1;
+					}
+					#conteudo-topo #em-breve p{
+						font-family:Arial, Helvetica, sans-serif;
+						font-size:14px;
+						color:#7a7a7a;	
+						margin-bottom:9px;
+					}
+					#conteudo-topo #em-breve p span{
+						font-family:"Tw Cen MT", Helvetica, sans-serif;
+						font-weight:bold;
+						color:#2f4276;
+						font-size:26px;	
+					}
+					#conteudo-topo #em-breve ul{
+							
+					}
+					#conteudo-topo #em-breve ul li{
+						display:inline;
+						float:left;
+						width:59px;
+						margin-right:7px;
+					}
+					#conteudo-topo #em-breve ul li:last-child{
+						margin-right:0px;	
+					}
+					#conteudo-topo #em-breve ul li .numero{
+						display:block;
+						width:59px;
+						height:49px;
+						background-color:#000;
+						font-family:Arial, Helvetica, sans-serif;
+						font-size:38px;
+						line-height:49px;
+						text-align:center;
+						color:#FFF;	
+						
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						border-radius: 4px;						
+					}
+					#conteudo-topo #em-breve ul li .escuro{
+						background-color:#304176 !important;	
+					}
+					#conteudo-topo #em-breve ul li .claro{
+						background-color:#64a8f2 !important;	
+					}
+					#conteudo-topo #em-breve ul li .texto{
+						display:block;
+						margin-top:5px;
+						text-align:center;
+						font-family:Arial, Helvetica, sans-serif;
+						font-size:12px;
+						font-weight:bold;
+						color:#304176;
+					}
+					
+		#conteudo-baixo{
+			margin:0 auto;
+			width:573px;
+			margin-top:79px;	
+		}
+		#conteudo-baixo form{
+			float:left;	
+			z-index:1;
+		}
+		#conteudo-baixo form label{
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:14px;
+			color:#ffffff;
+			display:block;
+			margin-bottom:11px;
+		}
+		#conteudo-baixo form input[type='text']{
+			float:left;
+			z-index:1;
+			margin-right:5px;	
+			width:278px;
+			padding:0px 13px;
+			line-height:39px;	
+			height:39px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:14px;
+			color:#969696;
+			background-color:#FFF;
+		}
+		#conteudo-baixo form input[type='submit']{
+			float:left;	
+			z-index:1;
+			width:94px;
+			height:39px;
+			background-color:#fff939;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:14px;
+			text-align:center;
+			line-height:39px;
+			color:#2f4276;
+			
+		}
+		#conteudo-baixo form input[type='submit']:hover{
+			background-color:#fffca7;	
+		}
+		
+		#conteudo-baixo #redes{
+			float:left;
+			margin-top: 25px;
+			margin-left: 25px;
+			z-index:1;
+		}
+		#conteudo-baixo #redes li{
+			display:inline;
+			float:left;
+			width:41px;
+			height:40px;
+			margin-right:11px;
+		}
+		#conteudo-baixo #redes li:last-child{
+			margin-right:0px;	
+		}
+		#conteudo-baixo #redes li a{
+			float:left;
+			width:41px;
+			height:40px;
+			background-image:url(images/icon-redes.png);
+			background-repeat:no-repeat;
+		}
+		#conteudo-baixo #redes li a.facebook{
+			background-position: 0px top;			
+		}
+		#conteudo-baixo #redes li a.facebook:hover{
+			background-position: 0px bottom;			
+		}
+		
+		#conteudo-baixo #redes li a.twitter{
+			background-position: -51px top;			
+		}
+		#conteudo-baixo #redes li a.twitter:hover{
+			background-position: -51px bottom;			
+		}
+		
+		#conteudo-baixo #redes li a.plus{
+			background-position: -103px top;			
+		}
+		#conteudo-baixo #redes li a.plus:hover{
+			background-position: -103px bottom;			
+		}
+		
+		#conteudo-baixo hr{
+			position:relative;
+			width:533px;
+			height:2px;
+			margin:0 auto;
+			background-color:transparent;
+			background-image:url(images/bg-separ.png);
+			background-repeat:no-repeat;
+			margin-top:42px;
+			
+		}
+		#conteudo-baixo .texto-rodape{
+			margin-top:16px;
+			text-align:center;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:12px;
+			color:#969cab;	
+		}

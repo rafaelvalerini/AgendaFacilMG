@@ -1,0 +1,42 @@
+.labelVisuEndereco {
+	font-family: 'font-file-77391', Arial;
+	font-weight: 700;
+	font-size: 16px;
+	color: #2a2c90;
+	background-image: url(../images/icon-endereco-big.png);
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	background-position: left center;
+	display: table;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	height: 10px;
+}
+
+.labelVisuTelefone {
+	font-family: 'font-file-77391', Arial;
+	font-weight: 700;
+	font-size: 16px;
+	color: #2a2c90;
+	background-image: url(../images/phone_call.png);
+	background-repeat: no-repeat;
+	padding-left: 110px;
+	background-position: left center;
+	display: table;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	height: 10px;
+}
+
+.labelVisuDescricao {
+	font-family: 'font-file-77391', Arial;
+	font-weight: 700;
+	font-size: 16px;
+	color: #2a2c90;
+	background-repeat: no-repeat;
+	background-position: left center;
+	display: table;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	height: 10px;
+}
