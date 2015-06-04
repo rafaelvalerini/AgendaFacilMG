@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="br.com.brandsoftware.agendafacilmg" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Agenda Fácil</name>
     <description>
-        	Módulo para efetuar vendas da Agenda Fácil
+        	Módulo para consultas de pessoas e empresas na região de Cássia/MG e Ibiraci/MG
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
+    <author email="rafael@brandsoftware.com.br" href="http://www.brandsoftware.com.br">
         Rafael Valerini Peliciari - @brandsoftware
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
@@ -67,7 +67,4 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
     <content src="index.html" />
-    <feature name="vendasPlugin">
-	    <param name="android-package" value="br.com.brandsoftware.agendafacilvendas.plugin.VendasPlugin" />
-	</feature>
 </widget>
