@@ -2,10 +2,10 @@
 <widget id="br.com.brandsoftware.agendafacilmg" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Agenda Fácil</name>
     <description>
-        	Módulo para efetuar vendas da Agenda Fácil
+        	Módulo para efetuar consultas da Agenda Fácil - MG
     </description>
     <author email="rafael@brandsoftware.com.br" href="http://www.brandsoftware.com.br">
-        Rafael Valerini Peliciari - @brandsoftware
+        brandsoftware
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
