@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="br.com.brandsoftware.agendafacilmg" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>AgendaFacil</name>
+    <name>Agenda Fácil</name>
     <description>
         	Módulo para efetuar consultas da Agenda Facil - MG
     </description>
