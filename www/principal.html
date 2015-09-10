@@ -70,7 +70,7 @@
 				
 				$.ajax({
 						type: "POST",
-						url: "http://www.agendafacilmg.com.br/services/contato/findContatoByNameAndCidade",
+						url: "http://agendafacilmg.com.br/services/contato/findContatoByNameAndCidade",
 						dataType: 'json',
 						crossDomain: true,
 						contentType: "application/json; charset=utf-8",
@@ -113,7 +113,7 @@
 		return "<li>"+
 					"<a href='#visualizacao' onclick='setId("+val.id+")'>"+
 					//"<img src='http://www.agendafacilmg.com.br"+val.caminhoLogo+"' />"+
-					"<img src='./img/anuncio_principal/logoCocapilMobile.png' style='top: 17px;'/>"+
+					"<img src='http://agendafacilmg.com.br"+val.caminhoLogo+"' style='top: 17px;'/>"+
 					"<h2>"+val.nome+"</h2>"+
 					"<p>"+val.enderecoCompleto+"</p>"+
 					"<p class='ul-li-aside'>"+val.telefone1String+"</p>"+
@@ -134,7 +134,7 @@
 		$.ajax({
 			beforeSend: function() { $.mobile.loading('show'); },
 			complete: function() { $.mobile.loading('hide'); },
-			url: "http://www.agendafacilmg.com.br/services/cidade/findAll",
+			url: "http://agendafacilmg.com.br/services/cidade/findAll",
 			data: {}
 		})
 		.then( function ( response ) {
@@ -200,20 +200,13 @@
 	
 	$( document ).on( "pageshow", "#visualizacao", function() {
 				
-		$("div#makeMeScrollable").smoothDivScroll({
-			hotSpotScrolling: false,
-			touchScrolling: true,
-			manualContinuousScrolling: true,
-			mousewheelScrolling: false
-		});	
-
 		var latitude = 0; 
 		var longitude = 0;
 		
 		$.ajax({
 			beforeSend: function() { $.mobile.loading('show'); },
 			complete: function() { $.mobile.loading('hide'); }, 
-			url: "http://www.agendafacilmg.com.br/services/contato/findContato?id=" + $('#idContato').val(),
+			url: "http://agendafacilmg.com.br/services/contato/findContato?id=" + $('#idContato').val(),
 			data: {
 			}
 		})
@@ -230,12 +223,19 @@
 			if(response.pago == 1){
 				$('#makeMeScrollable').show();
 				$('#makeMeScrollablePadrao').hide();
-				setDefaultWidhtImages();		
+				setDefaultWidhtImages(response.imagensPago);		
 			}else{
 				$('#makeMeScrollable').hide();
 				$('#makeMeScrollablePadrao').show();
 				setDefaultWidhtImagePadrao();
 			}
+			
+			$("div#makeMeScrollable").smoothDivScroll({
+				hotSpotScrolling: false,
+				touchScrolling: true,
+				manualContinuousScrolling: true,
+				mousewheelScrolling: false
+			});	
 			
 			var defaultLatLng = new google.maps.LatLng(latitude, longitude);
 		
@@ -270,7 +270,7 @@
 		$.ajax({
 			beforeSend: function() { $.mobile.loading('show'); },
 			complete: function() { $.mobile.loading('hide'); }, 
-			url: "http://www.agendafacilmg.com.br/services/contato/findContato?id=" + $('#idContato').val(),
+			url: "http://agendafacilmg.com.br/services/contato/findContato?id=" + $('#idContato').val(),
 			data: {
 			}
 		})
@@ -309,31 +309,27 @@
 		
 	}
 
-	function setDefaultWidhtImages(){
-		// Set the variable $width to the width of our wrapper on page load
+	function setDefaultWidhtImages(response){
+		
 		$width = $('#visualizacao').width() - 28;
-		// Target all images inside the #content. This works best if you want to ignore certain images that are part of the layout design
-		$('#imgView2').css({
-          'width' : $width , 'height' : 'auto'
-        });
 		
-		$('#imgView3').css({
-          'width' : $width , 'height' : 'auto'
-        });
+		$.each(response, function ( i, val ) {
+			
+			alert('imgView'+i);
+			$("#makeMeScrollable").append('<img src="http://www.agendafacilmg.com.br'+val+'" alt="Field" id="imgView'+i+'" class="imageBorderView" />');
+			
+		});
 		
-		$('#imgView4').css({
-          'width' : $width , 'height' : 'auto'
-        });
+		$.each(response.length, function ( i, val ) {
+			
+			alert('#imgView'+i);
+			$('#imgView'+i).css({
+			  'width' : $width , 'height' : 'auto'
+			});
+			
+		});
 		
-		$('#imgView5').css({
-          'width' : $width , 'height' : 'auto'
-        });
-		
-		$('#imgView6').css({
-          'width' : $width , 'height' : 'auto'
-        });
-		
-		$height = $('#imgView2').height();
+		$height = $('#imgView0').height();
 		
 		$('#makeMeScrollable').css({
           'width' : $width , 'height' : $height
@@ -427,7 +423,7 @@
  
         <div data-role="header">
 			
-			<!--<img border="0" src="http://www.agendafacilmg.com.br/agendaFacilWeb/resources/images/icon-facebook.png" 
+			<!--<img border="0" src="http://agendafacilmg.com.br/agendaFacilWeb/resources/images/icon-facebook.png" 
 				onclick="window.open('https://www.facebook.com/Agendafacilmg', '_system');" alt="Logo, Facebook" 
 				style="float:right;display:inline; padding-right:5px; padding-top:2px; width: 40px;"/> -->
 			<img border="0" src="./images/logo-cabec.png" alt="Logo, Agenda Fácil" 
@@ -501,15 +497,11 @@
 			</div>
 			
 			<div id="makeMeScrollable" style="display: none;">
-				<img src="http://www.agendafacilmg.com.br/imagens/cocapil/pag01.jpg" alt="Field" id="imgView2" class="imageBorderView" />
-				<img src="http://www.agendafacilmg.com.br/imagens/cocapil/pag02.jpg" alt="Field" id="imgView3" class="imageBorderView"/>
-				<img src="http://www.agendafacilmg.com.br/imagens/cocapil/pag03.jpg" alt="Field" id="imgView4" class="imageBorderView"/>
-				<img src="http://www.agendafacilmg.com.br/imagens/cocapil/pag04.jpg" alt="Field" id="imgView5" class="imageBorderView"/>
-				<img src="http://www.agendafacilmg.com.br/imagens/cocapil/pag05.jpg" alt="Field" id="imgView6" class="imageBorderView"/>
+				
 			</div>
 			
 			<div id="makeMeScrollablePadrao" style="display: none;">
-				<img src="http://www.agendafacilmg.com.br/agendaFacilWeb/resources/images/428x294.png" alt="Field" id="imgViewPadrao" class="imageBorderView" />
+				<img src="http://agendafacilmg.com.br/agendaFacilWeb/resources/images/428x294.png" alt="Field" id="imgViewPadrao" class="imageBorderView" />
 			</div>
 			
         </div>
