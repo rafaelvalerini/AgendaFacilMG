@@ -315,14 +315,14 @@
 		
 		$.each(response, function ( i, val ) {
 			
-			alert('imgView'+i);
+			
 			$("#makeMeScrollable").append('<img src="http://www.agendafacilmg.com.br'+val+'" alt="Field" id="imgView'+i+'" class="imageBorderView" />');
 			
 		});
 		
 		$.each(response.length, function ( i, val ) {
 			
-			alert('#imgView'+i);
+			
 			$('#imgView'+i).css({
 			  'width' : $width , 'height' : 'auto'
 			});
